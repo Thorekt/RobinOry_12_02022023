@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/LeftNavbar.css';
 
 /*
  * This is the left navbar.

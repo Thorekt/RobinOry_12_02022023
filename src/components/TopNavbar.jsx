@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/TopNavbar.css';
+
 /*
  * This is the top navbar.
  *
