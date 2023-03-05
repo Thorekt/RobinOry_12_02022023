@@ -1,4 +1,5 @@
 import React from 'react';
+import ActivityGraph from '../components/ActivityGraph';
 import HeadDashboard from '../components/HeadDashboard';
 import '../styles/Dashboard.css';
 
@@ -11,7 +12,7 @@ function Dashboard() {
   return (
     <div className='dashboard'>
       <HeadDashboard nameUser='Thomas' />
-      
+      <ActivityGraph/>
     </div>
   );
 }
