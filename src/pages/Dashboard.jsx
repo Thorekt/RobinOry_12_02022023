@@ -1,4 +1,6 @@
 import React from 'react';
+import HeadDashboard from '../components/HeadDashboard';
+import '../styles/Dashboard.css';
 
 /*
  * This is the Dashboard page.
@@ -6,7 +8,12 @@ import React from 'react';
  * @returns {JSX.Element} The Dashboard page.
  */
 function Dashboard() {
-  return <div></div>;
+  return (
+    <div className='dashboard'>
+      <HeadDashboard nameUser='Thomas' />
+      
+    </div>
+  );
 }
 
 export default Dashboard;

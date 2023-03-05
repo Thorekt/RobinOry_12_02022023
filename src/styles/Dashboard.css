@@ -1,0 +1,12 @@
+.dashboard {
+  margin-top: 68px;
+  margin-left: 117px;
+  padding: 0px 107px 0px 90px;
+}
+
+@media (max-height: 1000px) {
+  .dashboard {
+    margin-top: 48px;
+    padding: 0px 70px 0px 60px;
+  }
+}

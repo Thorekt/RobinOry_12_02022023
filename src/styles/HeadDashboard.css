@@ -1,0 +1,30 @@
+.head-dashboard {
+}
+
+.head-dashboard h1 {
+  margin: 0;
+  margin-bottom: 41px;
+  font-size: 48px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.head-dashboard h1 span {
+  color: #ff0101;
+}
+
+.head-dashboard p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (max-height: 1000px) {
+  .head-dashboard h1 {
+    margin-bottom: 30px;
+    font-size: 38px;
+  }
+  .head-dashboard p {
+    font-size: 14px;
+  }
+}
