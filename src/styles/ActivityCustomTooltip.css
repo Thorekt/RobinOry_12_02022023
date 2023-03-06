@@ -1,0 +1,15 @@
+.activity-custom-tooltip {
+  background: #e60000;
+  text-align: center;
+  padding: 4px 6px;
+}
+
+.activity-custom-tooltip .label {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 500;
+}
+[role='dialog'] {
+  outline: none;
+}
