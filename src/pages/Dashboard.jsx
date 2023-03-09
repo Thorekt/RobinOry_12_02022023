@@ -28,25 +28,25 @@ function Dashboard() {
             iconSrc={caloriesSrc}
             label='kCal'
             value='123'
-            text='Calories'
+            name='Calories'
           />
           <KeyInformationCard
             iconSrc={proteinSrc}
             label='g'
             value='123'
-            text='Proteines'
+            name='Proteines'
           />
           <KeyInformationCard
             iconSrc={carbsSrc}
             label='g'
             value='123'
-            text='Glucides'
+            name='Glucides'
           />
           <KeyInformationCard
             iconSrc={fatSrc}
             label='g'
             value='123'
-            text='Lipides'
+            name='Lipides'
           />
         </div>
       </div>

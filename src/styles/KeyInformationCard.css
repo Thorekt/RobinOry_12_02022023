@@ -7,3 +7,22 @@
   flex-direction: row;
   width: 258px;
 }
+
+.key-information-card div {
+  padding-top: 7px;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.key-information-card .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #282d30;
+}
+
+.key-information-card .name {
+  font-weight: 500;
+  font-size: 14px;
+  color: #74798c;
+}

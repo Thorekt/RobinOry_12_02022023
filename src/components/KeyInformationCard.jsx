@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/KeyInformationCard.css';
 
-function KeyInformationCard({ iconSrc, label, value, text }) {
+function KeyInformationCard({ iconSrc, label, value, name }) {
   return (
     <div className='key-information-card'>
-      <img src={iconSrc} alt={'icon ' + text} />
+      <img src={iconSrc} alt={'icon ' + name} />
       <div>
-        <span>{value + label}</span>
-        <span>{text}</span>
+        <span className='value'>{value + label}</span>
+        <span className='name'>{name}</span>
       </div>
     </div>
   );
