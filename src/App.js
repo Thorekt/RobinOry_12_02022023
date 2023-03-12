@@ -4,9 +4,7 @@ import React from 'react';
 import Dashboard from './pages/Dashboard';
 import TopNavbar from './components/TopNavbar';
 import LeftNavbar from './components/LeftNavbar';
-import { useEffect } from 'react';
 
-import Api from './utils/Api.js';
 /*
  * Entry point for the application. Should not be used elsewhere than in src/index.js.
  * @returns {JSX.Element}
@@ -15,16 +13,13 @@ import Api from './utils/Api.js';
  * <App />
  */
 function App() {
-  useEffect(() => {
-    console.log(Api.getUserBaseInformation(12));
-  });
   return (
     <Router>
       <div className='App'>
         <TopNavbar />
         <LeftNavbar />
         <Routes>
-          <Route index element={<Dashboard />} />
+          <Route index element={<Dashboard userId={12} />} />
         </Routes>
       </div>
     </Router>
