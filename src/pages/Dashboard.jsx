@@ -34,7 +34,7 @@ function Dashboard({ userId }) {
       <HeadDashboard nameUser={user.userInfos.firstName} />
       <div className='dashboard-content'>
         <div className='center-panel'>
-          <ActivityGraph />
+          <ActivityGraph userId={userId} />
           <SmallerGraphZone />
         </div>
         <div className='right-panel'>

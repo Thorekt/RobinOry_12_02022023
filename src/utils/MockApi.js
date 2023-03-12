@@ -32,7 +32,7 @@ const MockApi = {
    */
   getUserActivityInformation: (userId) => {
     const userActivityInformation = USERS_ACTIVITY.find((user) => {
-      return user.data.id === userId;
+      return user.data.userId === userId;
     });
     if (userActivityInformation === undefined) {
       return 'can not get user';

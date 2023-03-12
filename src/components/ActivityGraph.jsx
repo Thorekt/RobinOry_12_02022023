@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import {
   Bar,
   BarChart,
@@ -14,36 +14,56 @@ import {
 import '../styles/ActivityGraph.css';
 import AtivityCustomTooltip from './ActivityCustomTooltip';
 
-function ActivityGraph() {
-  let data = [
-    { day: '2020-07-01', kilogram: 80, calories: 240 },
-    { day: '2020-07-02', kilogram: 80, calories: 220 },
-    { day: '2020-07-03', kilogram: 81, calories: 280 },
-    { day: '2020-07-04', kilogram: 81, calories: 290 },
-    { day: '2020-07-05', kilogram: 80, calories: 160 },
-    { day: '2020-07-06', kilogram: 78, calories: 162 },
-    { day: '2020-07-07', kilogram: 76, calories: 390 },
-  ];
+import MockApi from '../utils/MockApi';
 
-  data = data.map((item, index) => {
+function ActivityGraph({ userId }) {
+  const [activityData, setActivityData] = useState(null);
+
+  useEffect(() => {
+    setActivityData(MockApi.getUserActivityInformation(userId).data);
+  });
+
+  if (!activityData) {
+    return <div>Loading...</div>;
+  }
+
+  const sessionsData = activityData.sessions.map((item, index) => {
     item.key = index + 1;
     return item;
   });
   return (
-    <ResponsiveContainer height={200} className='activity-graph'>
-      <BarChart data={data} height={150}>
-        <CartesianGrid vertical={false} />
-        <XAxis dataKey={'key'} />
-        <YAxis dataKey={'kilogram'} domain={[69, 'auto']} orientation='right' />
-        <YAxis dataKey={'calories'} />
-        <Tooltip content={<AtivityCustomTooltip />} />
-        <Legend verticalAlign='top' align='right' iconType='circle' />
-        <Label
-          position={'insideTopLeft'}
-          value='Activité quotidienne'
-          offset={0}
+    <ResponsiveContainer width='100%' className='activity-graph'>
+      <BarChart width='100%' data={sessionsData} barGap={-90}>
+        <Label position={'insideTopLeft'} content='Activité quotidienne' />
+        <CartesianGrid vertical={false} strokeDasharray='4' />
+        <XAxis dataKey={'key'} tickLine={false} />
+        <YAxis
+          yAxisId={'kilogramAxis'}
+          dataKey={'kilogram'}
+          domain={[69, 'dataMax + 2']}
+          orientation='right'
+          tickLine={false}
+          axisLine={false}
+          tickCount={3}
         />
+        <YAxis
+          yAxisId={'caloriesAxis'}
+          dataKey={'calories'}
+          domain={[0, 'dataMax + 10']}
+          axisLine={false}
+          tickLine={false}
+          tick={false}
+          allowDataOverflow={false}
+          height='100%'
+        />
+        <Tooltip
+          coordinate={{ x: 100, y: 100 }}
+          content={<AtivityCustomTooltip />}
+        />
+        <Legend verticalAlign='top' align='right' iconType='circle' />
+
         <Bar
+          yAxisId={'kilogramAxis'}
           name='Poids (kg)'
           dataKey='kilogram'
           fill='#282D30'
@@ -51,6 +71,7 @@ function ActivityGraph() {
           maxBarSize={7}
         />
         <Bar
+          yAxisId={'caloriesAxis'}
           name='Calories brûlées (kCal)'
           dataKey='calories'
           fill='#E60000'
