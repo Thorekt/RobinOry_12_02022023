@@ -35,7 +35,7 @@ function Dashboard({ userId }) {
       <div className='dashboard-content'>
         <div className='center-panel'>
           <ActivityGraph userId={userId} />
-          <SmallerGraphZone />
+          <SmallerGraphZone userId={userId} />
         </div>
         <div className='right-panel'>
           <KeyInformationCard
