@@ -5,7 +5,7 @@ const BASE_URL = `http://localhost:3000`;
 /*
  * API calls to get user information. contains 4 calls (base, activity, average-sessions, performance)
  */
-const api = {
+const Api = {
   /*
    * Get user base information
    * @param {string} userId - user id
@@ -40,4 +40,4 @@ const api = {
   },
 };
 
-export default api;
+export default Api;
