@@ -29,13 +29,19 @@ function Dashboard({ userId }) {
     return <div>Loading...</div>;
   }
 
+  if (!user.todayScore && user.score) {
+    user.todayScore = user.score;
+  }
+
+  console.log(user);
+
   return (
     <div className='dashboard'>
       <HeadDashboard nameUser={user.userInfos.firstName} />
       <div className='dashboard-content'>
         <div className='center-panel'>
           <ActivityGraph userId={userId} />
-          <SmallerGraphZone userId={userId} />
+          <SmallerGraphZone userId={userId} todayScore={user.todayScore} />
         </div>
         <div className='right-panel'>
           <KeyInformationCard

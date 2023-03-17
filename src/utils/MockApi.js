@@ -48,7 +48,7 @@ const MockApi = {
   getUserAverageSessionsInformation: (userId) => {
     const userAverageSessionsInformation = USERS_AVERAGE_SESSIONS.find(
       (user) => {
-        return user.data.id === userId;
+        return user.data.userId === userId;
       }
     );
     if (userAverageSessionsInformation === undefined) {
@@ -64,7 +64,7 @@ const MockApi = {
    */
   getUserPerformanceInformation: (userId) => {
     const userPerformanceInformation = USERS_PERFORMANCE.find((user) => {
-      return user.data.id === userId;
+      return user.data.userId === userId;
     });
     if (userPerformanceInformation === undefined) {
       return 'can not get user';
