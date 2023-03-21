@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 
 import '../../styles/ActivityGraph.css';
-import AtivityCustomTooltip from './custom/ActivityCustomTooltip';
+import AtivityCustomTooltip from './customs/ActivityCustomTooltip';
 
 import MockApi from '../../utils/MockApi';
 
