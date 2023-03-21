@@ -12,9 +12,9 @@ import {
 } from 'recharts';
 
 import '../styles/ActivityGraph.css';
-import AtivityCustomTooltip from './ActivityCustomTooltip';
+import AtivityCustomTooltip from './custom/ActivityCustomTooltip';
 
-import MockApi from '../utils/MockApi';
+import MockApi from '../../utils/MockApi';
 
 function ActivityGraph({ userId }) {
   const [activityData, setActivityData] = useState(null);
@@ -32,22 +32,23 @@ function ActivityGraph({ userId }) {
     return item;
   });
   return (
-    <ResponsiveContainer width='100%' className='activity-graph'>
+    <ResponsiveContainer className='activity-graph'>
       <BarChart
-        width='100%'
         barSize={7} //epaisseur de la barre
         barGap={8} //espace entre chaque barre
         data={sessionsData}
         margin={{
-          top: 80,
-          right: 50,
-          left: 45,
-          bottom: 20,
+          top: 113,
+          right: 0,
+          left: 43,
+          bottom: 0,
         }}
       >
-        <Label position={'insideTopLeft'} content='Activité quotidienne' />
+        <text x='24' y='32' className='title'>
+          Activité quotidienne
+        </text>
         <CartesianGrid vertical={false} strokeDasharray='4' />
-        <XAxis dataKey={'key'} tickLine={false} />
+        <XAxis dataKey={'key'} tickLine={false} scale='point' />
         <YAxis
           yAxisId={'kilogramAxis'}
           dataKey={'kilogram'}
@@ -56,14 +57,13 @@ function ActivityGraph({ userId }) {
           tickLine={false}
           axisLine={false}
           tickCount={3}
+          tick={{ fontSize: 14, fontWeight: 500, color: '#9B9EAC' }}
         />
         <YAxis
           yAxisId={'caloriesAxis'}
           dataKey={'calories'}
           domain={[0, 'dataMax + 10']}
-          axisLine={false}
-          tickLine={false}
-          tick={false}
+          hide={true}
           allowDataOverflow={false}
           height='100%'
         />
@@ -71,7 +71,13 @@ function ActivityGraph({ userId }) {
           coordinate={{ x: 100, y: 100 }}
           content={<AtivityCustomTooltip />}
         />
-        <Legend verticalAlign='top' align='right' iconType='circle' />
+        <Legend
+          x='24'
+          verticalAlign='top'
+          align='right'
+          iconType='circle'
+          iconSize={8}
+        />
 
         <Bar
           yAxisId={'kilogramAxis'}

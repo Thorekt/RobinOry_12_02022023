@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import '../styles/PerformanceGraph.css';
-import MockApi from '../utils/MockApi';
+import MockApi from '../../utils/MockApi';
 import {
   Radar,
   RadarChart,

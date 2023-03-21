@@ -1,9 +1,9 @@
 import React from 'react';
 
 import '../styles/SmallerGraphZone.css';
-import AverageSessionsGraph from './AverageSessionsGraph';
-import PerformanceGraph from './PerformanceGraph';
-import TodayScoreGraph from './TodayScoreGraph';
+import AverageSessionsGraph from './graph/AverageSessionsGraph';
+import PerformanceGraph from './graph/PerformanceGraph';
+import TodayScoreGraph from './graph/TodayScoreGraph';
 
 function SmallerGraphZone({ userId, todayScore }) {
   return (

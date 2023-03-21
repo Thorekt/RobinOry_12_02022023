@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import ActivityGraph from '../components/ActivityGraph';
+import ActivityGraph from '../components/graph/ActivityGraph';
 import HeadDashboard from '../components/HeadDashboard';
 import KeyInformationCard from '../components/KeyInformationCard';
 import SmallerGraphZone from '../components/SmallerGraphZone';
