@@ -8,15 +8,14 @@ import {
   Legend,
   ResponsiveContainer,
   CartesianGrid,
-  Label,
 } from 'recharts';
 
-import '../../styles/ActivityGraph.css';
-import AtivityCustomTooltip from './customs/ActivityTooltip';
+import '../../styles/graphs/Activity.css';
+import AtivityTooltip from './customs/ActivityTooltip';
 
 import MockApi from '../../utils/MockApi';
 
-function ActivityGraph({ userId }) {
+function Activity({ userId }) {
   const [activityData, setActivityData] = useState(null);
 
   useEffect(() => {
@@ -67,10 +66,7 @@ function ActivityGraph({ userId }) {
           allowDataOverflow={false}
           height='100%'
         />
-        <Tooltip
-          coordinate={{ x: 100, y: 100 }}
-          content={<AtivityCustomTooltip />}
-        />
+        <Tooltip coordinate={{ x: 100, y: 100 }} content={<AtivityTooltip />} />
         <Legend
           x='24'
           verticalAlign='top'
@@ -100,4 +96,4 @@ function ActivityGraph({ userId }) {
   );
 }
 
-export default ActivityGraph;
+export default Activity;

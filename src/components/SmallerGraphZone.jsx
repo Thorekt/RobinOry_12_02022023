@@ -1,16 +1,16 @@
 import React from 'react';
 
 import '../styles/SmallerGraphZone.css';
-import AverageSessionsGraph from './graphs/AverageSessionsGraph';
-import PerformanceGraph from './graphs/PerformanceGraph';
-import TodayScoreGraph from './graphs/TodayScoreGraph';
+import AverageSessions from './graphs/AverageSessions';
+import Performance from './graphs/Performance';
+import TodayScore from './graphs/TodayScore';
 
 function SmallerGraphZone({ userId, todayScore }) {
   return (
     <div className='smaller-graph-zone'>
-      <AverageSessionsGraph userId={userId} />
-      <PerformanceGraph userId={userId} />
-      <TodayScoreGraph todayScore={todayScore} />
+      <AverageSessions userId={userId} />
+      <Performance userId={userId} />
+      <TodayScore todayScore={todayScore} />
     </div>
   );
 }

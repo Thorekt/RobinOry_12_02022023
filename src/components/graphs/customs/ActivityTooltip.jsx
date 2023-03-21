@@ -1,8 +1,8 @@
 import React from 'react';
 
-import '../../../styles/ActivityCustomTooltip.css';
+import '../../../styles/graphs/customs/ActivityTooltip.css';
 
-function AtivityCustomTooltip({ active, payload, label }) {
+function AtivityTooltip({ active, payload, label }) {
   if (active && payload && payload.length) {
     return (
       <div className='activity-custom-tooltip'>
@@ -15,4 +15,4 @@ function AtivityCustomTooltip({ active, payload, label }) {
   return null;
 }
 
-export default AtivityCustomTooltip;
+export default AtivityTooltip;

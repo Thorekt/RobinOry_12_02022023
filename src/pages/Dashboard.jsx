@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import ActivityGraph from '../components/graphs/ActivityGraph';
+import Activity from '../components/graphs/Activity';
 import HeadDashboard from '../components/HeadDashboard';
 import KeyInformationCard from '../components/KeyInformationCard';
 import SmallerGraphZone from '../components/SmallerGraphZone';
@@ -41,7 +41,7 @@ function Dashboard({ userId }) {
       <HeadDashboard nameUser={user.userInfos.firstName} />
       <div className='dashboard-content'>
         <div className='center-panel'>
-          <ActivityGraph userId={userId} />
+          <Activity userId={userId} />
           <SmallerGraphZone userId={userId} todayScore={user.todayScore} />
         </div>
         <div className='right-panel'>

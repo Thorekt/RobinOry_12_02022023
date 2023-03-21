@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import '../../styles/TodayScoreGraph.css';
+import '../../styles/graphs/TodayScore.css';
 import {
   RadialBar,
   RadialBarChart,
@@ -10,7 +10,7 @@ import {
   PolarAngleAxis,
 } from 'recharts';
 
-function TodayScoreGraph({ todayScore }) {
+function TodayScore({ todayScore }) {
   if (!todayScore) {
     return <div>Loading...</div>;
   }
@@ -38,4 +38,4 @@ function TodayScoreGraph({ todayScore }) {
   );
 }
 
-export default TodayScoreGraph;
+export default TodayScore;

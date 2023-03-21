@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import '../../styles/PerformanceGraph.css';
+import '../../styles/graphs/Performance.css';
 import MockApi from '../../utils/MockApi';
 import {
   Radar,
@@ -12,7 +12,7 @@ import {
   Label,
 } from 'recharts';
 
-function PerformanceGraph({ userId }) {
+function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ function PerformanceGraph({ userId }) {
   );
 }
 
-export default PerformanceGraph;
+export default Performance;

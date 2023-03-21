@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import '../../styles/AverageSessionsGraph.css';
+import '../../styles/graphs/AverageSessions.css';
 import MockApi from '../../utils/MockApi';
 import {
   Line,
@@ -15,7 +15,7 @@ import {
 
 const DAY_LIST = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
-function AverageSessionsGraph({ userId }) {
+function AverageSessions({ userId }) {
   const [averageSessionsData, setAverageSessionsData] = useState(null);
 
   useEffect(() => {
@@ -50,4 +50,4 @@ function AverageSessionsGraph({ userId }) {
   );
 }
 
-export default AverageSessionsGraph;
+export default AverageSessions;
