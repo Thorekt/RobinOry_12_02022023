@@ -12,7 +12,7 @@ import {
 } from 'recharts';
 
 import '../../styles/ActivityGraph.css';
-import AtivityCustomTooltip from './customs/ActivityCustomTooltip';
+import AtivityCustomTooltip from './customs/ActivityTooltip';
 
 import MockApi from '../../utils/MockApi';
 
@@ -52,7 +52,7 @@ function ActivityGraph({ userId }) {
         <YAxis
           yAxisId={'kilogramAxis'}
           dataKey={'kilogram'}
-          domain={[69, 'dataMax + 2']}
+          domain={['dataMin - 3', 'dataMax + 2']}
           orientation='right'
           tickLine={false}
           axisLine={false}
