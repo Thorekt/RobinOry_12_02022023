@@ -11,7 +11,8 @@ import {
 } from 'recharts';
 
 import '../../styles/graphs/Activity.css';
-import AtivityTooltip from './customs/ActivityTooltip';
+import ActivityTooltip from './customs/ActivityTooltip';
+import ActivityXAxisTick from './customs/ActivityXAxisTick';
 
 import MockApi from '../../utils/MockApi';
 
@@ -47,7 +48,12 @@ function Activity({ userId }) {
           Activité quotidienne
         </text>
         <CartesianGrid vertical={false} strokeDasharray='4' />
-        <XAxis dataKey={'key'} tickLine={false} scale='point' />
+        <XAxis
+          dataKey={'key'}
+          tickLine={false}
+          scale='point'
+          tick={<ActivityXAxisTick />}
+        />
         <YAxis
           yAxisId={'kilogramAxis'}
           dataKey={'kilogram'}
@@ -56,7 +62,6 @@ function Activity({ userId }) {
           tickLine={false}
           axisLine={false}
           tickCount={3}
-          tick={{ fontSize: 14, fontWeight: 500, color: '#9B9EAC' }}
         />
         <YAxis
           yAxisId={'caloriesAxis'}
@@ -66,7 +71,10 @@ function Activity({ userId }) {
           allowDataOverflow={false}
           height='100%'
         />
-        <Tooltip coordinate={{ x: 100, y: 100 }} content={<AtivityTooltip />} />
+        <Tooltip
+          coordinate={{ x: 100, y: 100 }}
+          content={<ActivityTooltip />}
+        />
         <Legend
           x='24'
           verticalAlign='top'

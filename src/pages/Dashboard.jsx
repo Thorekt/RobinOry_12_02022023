@@ -24,7 +24,7 @@ function Dashboard({ userId }) {
 
   useEffect(() => {
     setUser(MockApi.getUserBaseInformation(userId).data);
-  });
+  }, [userId]);
 
   if (!user) {
     return <div>Loading...</div>;

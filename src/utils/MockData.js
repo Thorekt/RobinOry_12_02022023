@@ -38,6 +38,19 @@ const USERS = [
       },
     },
   },
+  {
+    data: {
+      id: 19,
+      userInfos: { firstName: 'Paul', lastName: 'Hochont', age: 18 },
+      score: 0.82,
+      keyData: {
+        calorieCount: 2200,
+        proteinCount: 290,
+        carbohydrateCount: 250,
+        lipidCount: 90,
+      },
+    },
+  },
 ];
 
 /*
@@ -78,6 +91,20 @@ const USERS_ACTIVITY = [
       ],
     },
   },
+  {
+    data: {
+      userId: 19,
+      sessions: [
+        { day: '2020-07-01', kilogram: 80, calories: 230 },
+        { day: '2020-07-02', kilogram: 79, calories: 240 },
+        { day: '2020-07-03', kilogram: 80, calories: 250 },
+        { day: '2020-07-04', kilogram: 78, calories: 260 },
+        { day: '2020-07-05', kilogram: 79, calories: 250 },
+        { day: '2020-07-06', kilogram: 81, calories: 242 },
+        { day: '2020-07-07', kilogram: 82, calories: 230 },
+      ],
+    },
+  },
 ];
 
 /*
@@ -114,6 +141,20 @@ const USERS_AVERAGE_SESSIONS = [
         { day: 5, sessionLength: 30 },
         { day: 6, sessionLength: 50 },
         { day: 7, sessionLength: 50 },
+      ],
+    },
+  },
+  {
+    data: {
+      userId: 19,
+      sessions: [
+        { day: 1, sessionLength: 20 },
+        { day: 2, sessionLength: 30 },
+        { day: 3, sessionLength: 40 },
+        { day: 4, sessionLength: 50 },
+        { day: 5, sessionLength: 40 },
+        { day: 6, sessionLength: 30 },
+        { day: 7, sessionLength: 20 },
       ],
     },
   },
@@ -168,6 +209,27 @@ const USERS_PERFORMANCE = [
         { value: 80, kind: 4 },
         { value: 220, kind: 5 },
         { value: 110, kind: 6 },
+      ],
+    },
+  },
+  {
+    data: {
+      userId: 19,
+      kind: {
+        1: 'cardio',
+        2: 'energy',
+        3: 'endurance',
+        4: 'strength',
+        5: 'speed',
+        6: 'intensity',
+      },
+      data: [
+        { value: 190, kind: 1 },
+        { value: 210, kind: 2 },
+        { value: 160, kind: 3 },
+        { value: 170, kind: 4 },
+        { value: 220, kind: 5 },
+        { value: 240, kind: 6 },
       ],
     },
   },
