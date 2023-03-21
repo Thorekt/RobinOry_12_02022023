@@ -33,7 +33,18 @@ function ActivityGraph({ userId }) {
   });
   return (
     <ResponsiveContainer width='100%' className='activity-graph'>
-      <BarChart width='100%' data={sessionsData} barGap={-90}>
+      <BarChart
+        width='100%'
+        barSize={7} //epaisseur de la barre
+        barGap={8} //espace entre chaque barre
+        data={sessionsData}
+        margin={{
+          top: 80,
+          right: 50,
+          left: 45,
+          bottom: 20,
+        }}
+      >
         <Label position={'insideTopLeft'} content='Activité quotidienne' />
         <CartesianGrid vertical={false} strokeDasharray='4' />
         <XAxis dataKey={'key'} tickLine={false} />

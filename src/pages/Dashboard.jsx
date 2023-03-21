@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import ActivityGraph from '../components/ActivityGraph';
 import HeadDashboard from '../components/HeadDashboard';
 import KeyInformationCard from '../components/KeyInformationCard';
@@ -15,7 +16,7 @@ import '../styles/Dashboard.css';
 
 /*
  * This is the Dashboard page.
- *
+ * @param {int} userId The id of the user.
  * @returns {JSX.Element} The Dashboard page.
  */
 function Dashboard({ userId }) {
@@ -73,5 +74,9 @@ function Dashboard({ userId }) {
     </div>
   );
 }
+
+Dashboard.propTypes = {
+  userId: PropTypes.number,
+};
 
 export default Dashboard;
