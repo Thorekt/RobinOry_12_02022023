@@ -19,11 +19,9 @@ function AverageSessions({ userId }) {
   const [averageSessionsData, setAverageSessionsData] = useState(null);
 
   useEffect(() => {
-    if (!averageSessionsData) {
-      setAverageSessionsData(
-        MockApi.getUserAverageSessionsInformation(userId).data
-      );
-    }
+    setAverageSessionsData(
+      MockApi.getUserAverageSessionsInformation(userId).data
+    );
   }, [userId, averageSessionsData]);
 
   if (!averageSessionsData) {

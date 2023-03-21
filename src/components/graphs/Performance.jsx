@@ -16,9 +16,7 @@ function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
 
   useEffect(() => {
-    if (!performanceData) {
-      setPerformanceData(MockApi.getUserPerformanceInformation(userId).data);
-    }
+    setPerformanceData(MockApi.getUserPerformanceInformation(userId).data);
   }, [userId, performanceData]);
 
   if (!performanceData) {

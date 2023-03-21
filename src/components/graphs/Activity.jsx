@@ -13,6 +13,7 @@ import {
 import '../../styles/graphs/Activity.css';
 import ActivityTooltip from './customs/ActivityTooltip';
 import ActivityXAxisTick from './customs/ActivityXAxisTick';
+import ActivityYAxisTick from './customs/ActivityYAxisTick';
 
 import MockApi from '../../utils/MockApi';
 
@@ -21,7 +22,7 @@ function Activity({ userId }) {
 
   useEffect(() => {
     setActivityData(MockApi.getUserActivityInformation(userId).data);
-  });
+  }, [userId, activityData]);
 
   if (!activityData) {
     return <div>Loading...</div>;
@@ -53,6 +54,8 @@ function Activity({ userId }) {
           tickLine={false}
           scale='point'
           tick={<ActivityXAxisTick />}
+          padding={{ left: 10, right: 10 }}
+          stroke='#DEDEDE'
         />
         <YAxis
           yAxisId={'kilogramAxis'}
@@ -62,6 +65,7 @@ function Activity({ userId }) {
           tickLine={false}
           axisLine={false}
           tickCount={3}
+          tick={<ActivityYAxisTick />}
         />
         <YAxis
           yAxisId={'caloriesAxis'}
