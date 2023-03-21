@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import '../styles/TodayScoreGraph.css';
+import '../../styles/TodayScoreGraph.css';
 import {
   RadialBar,
   RadialBarChart,

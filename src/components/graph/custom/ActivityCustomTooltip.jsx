@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/ActivityCustomTooltip.css';
+import '../../../styles/ActivityCustomTooltip.css';
 
 function AtivityCustomTooltip({ active, payload, label }) {
   if (active && payload && payload.length) {

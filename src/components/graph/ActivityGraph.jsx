@@ -11,7 +11,7 @@ import {
   Label,
 } from 'recharts';
 
-import '../styles/ActivityGraph.css';
+import '../../styles/ActivityGraph.css';
 import AtivityCustomTooltip from './custom/ActivityCustomTooltip';
 
 import MockApi from '../../utils/MockApi';
