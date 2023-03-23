@@ -36,12 +36,19 @@ function AverageSessions({ userId }) {
   return (
     <ResponsiveContainer className='average-sessions-graph'>
       <LineChart data={sessionsData}>
-        <CartesianGrid />
-        <XAxis dataKey={'dayLetter'} />
-        <YAxis />
+        <text x='34' y='29' className='title' fill='#FFFFFF'>
+          Durée moyenne des sessions
+        </text>
+        <CartesianGrid vertical={false} horizontal={false} />
+        <XAxis dataKey={'dayLetter'} tickLine={false} axisLine={false} />
         <Tooltip />
-        <Legend />
-        <Line type='monotone' dataKey='sessionLength' />
+        <Line
+          type='natural'
+          dataKey='sessionLength'
+          stroke='#ffffff'
+          strokeWidth={2}
+          dot={false}
+        />
         <Label />
       </LineChart>
     </ResponsiveContainer>

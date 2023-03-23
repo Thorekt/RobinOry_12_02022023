@@ -28,14 +28,15 @@ function Performance({ userId }) {
     return item;
   });
   return (
-    <ResponsiveContainer className='average-sessions-graph'>
+    <ResponsiveContainer className='performance-graph'>
       <RadarChart outerRadius={90} width={730} height={250} data={data}>
-        <PolarGrid />
-        <PolarAngleAxis dataKey='perfName' />
+        <PolarGrid gridType='polygon' radialLines={false} />
+        <PolarAngleAxis
+          dataKey='perfName'
+          tick={{ fill: '#ffffff', fontSize: 15 }}
+        />
         <Tooltip />
-        <Legend />
-        <Radar type='monotone' dataKey='value' />
-        <Label />
+        <Radar type='monotone' dataKey='value' fill='rgba(255, 1, 1, 0.7)' />
       </RadarChart>
     </ResponsiveContainer>
   );

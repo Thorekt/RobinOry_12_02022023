@@ -45,7 +45,7 @@ function Activity({ userId }) {
           bottom: 0,
         }}
       >
-        <text x='24' y='32' className='title'>
+        <text x='32' y='24' className='title'>
           Activité quotidienne
         </text>
         <CartesianGrid vertical={false} strokeDasharray='4' />

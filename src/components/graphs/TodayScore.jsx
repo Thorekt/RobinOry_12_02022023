@@ -18,7 +18,7 @@ function TodayScore({ todayScore }) {
   const data = [{ todayScore: todayScore * 100 }];
 
   return (
-    <ResponsiveContainer className='average-sessions-graph'>
+    <ResponsiveContainer className='today-score-graph'>
       <RadialBarChart
         cx='50%'
         cy='50%'
