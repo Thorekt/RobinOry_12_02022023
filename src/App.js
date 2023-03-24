@@ -2,6 +2,7 @@ import './styles/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Dashboard from './pages/Dashboard';
+import Error from './pages/Error';
 import TopNavbar from './components/TopNavbar';
 import LeftNavbar from './components/LeftNavbar';
 
@@ -19,7 +20,8 @@ function App() {
         <TopNavbar />
         <LeftNavbar />
         <Routes>
-          <Route index element={<Dashboard userId={19} />} />
+          <Route index element={<Dashboard userId={18} />} />
+          <Route path='error' element={<Error />} />
         </Routes>
       </div>
     </Router>

@@ -17,6 +17,7 @@ import ActivityXAxisTick from './customs/ActivityXAxisTick';
 import ActivityYAxisTick from './customs/ActivityYAxisTick';
 
 import ApiHandler from '../../utils/ApiHandler';
+import { Navigate } from 'react-router-dom';
 
 /*
  * the Activity graph
@@ -27,12 +28,22 @@ import ApiHandler from '../../utils/ApiHandler';
 
 function Activity({ userId }) {
   const [activityData, setActivityData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     ApiHandler.getUserActivityInformation(userId)
       .then((res) => setActivityData(res.data))
-      .catch((err) => console.log(err));
-  }, [userId, activityData]);
+      .catch((err) => setError(err));
+  }, [userId, activityData, error]);
+
+  if (error !== null) {
+    console.log(error);
+    return (
+      <React.Fragment>
+        <Navigate to='/error' replace={true} />
+      </React.Fragment>
+    );
+  }
 
   if (!activityData) {
     return <div>Loading...</div>;

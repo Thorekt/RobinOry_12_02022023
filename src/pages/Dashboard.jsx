@@ -11,6 +11,7 @@ import fatSrc from '../assets/icons/icon_fat_60x60.svg';
 import proteinSrc from '../assets/icons/icon_protein_60x60.svg';
 
 import ApiHandler from '../utils/ApiHandler';
+import { Navigate } from 'react-router-dom';
 
 import '../styles/Dashboard.css';
 
@@ -22,13 +23,18 @@ import '../styles/Dashboard.css';
  */
 function Dashboard({ userId }) {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     ApiHandler.getUserBaseInformation(userId)
       .then((res) => setUser(res.data))
-      .catch((err) => console.log(err));
-  }, [userId, user]);
+      .catch((err) => setError(err));
+  }, [userId, user, error]);
 
+  if (error !== null) {
+    console.log(error);
+    return <Navigate to='/error' replace={true} />;
+  }
   if (!user) {
     return <div className='dashboard'>Loading...</div>;
   }

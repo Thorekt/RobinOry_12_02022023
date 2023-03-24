@@ -2,6 +2,8 @@ import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/graphs/AverageSessions.css';
 import ApiHandler from '../../utils/ApiHandler';
+import { Navigate } from 'react-router-dom';
+
 import {
   Line,
   LineChart,
@@ -23,12 +25,22 @@ const DAY_LIST = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
 function AverageSessions({ userId }) {
   const [averageSessionsData, setAverageSessionsData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     ApiHandler.getUserAverageSessionsInformation(userId)
       .then((res) => setAverageSessionsData(res.data))
-      .catch((err) => console.log(err));
-  }, [userId, averageSessionsData]);
+      .catch((err) => setError(err));
+  }, [userId, averageSessionsData, error]);
+
+  if (error !== null) {
+    console.log(error);
+    return (
+      <React.Fragment>
+        <Navigate to='/error' replace={true} />
+      </React.Fragment>
+    );
+  }
 
   if (!averageSessionsData) {
     return <div>Loading...</div>;

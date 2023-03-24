@@ -2,6 +2,8 @@ import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/graphs/Performance.css';
 import ApiHandler from '../../utils/ApiHandler';
+import { Navigate } from 'react-router-dom';
+
 import {
   Radar,
   RadarChart,
@@ -20,12 +22,22 @@ import {
 
 function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     ApiHandler.getUserPerformanceInformation(userId)
       .then((res) => setPerformanceData(res.data))
-      .catch((err) => console.log(err));
-  }, [userId, performanceData]);
+      .catch((err) => setError(err));
+  }, [userId, performanceData, error]);
+
+  if (error !== null) {
+    console.log(error);
+    return (
+      <React.Fragment>
+        <Navigate to='/error' replace={true} />
+      </React.Fragment>
+    );
+  }
 
   if (!performanceData) {
     return <div>Loading...</div>;
