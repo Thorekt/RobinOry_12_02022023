@@ -1,6 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+ * This is the a tick component for the Y axis of the Activity graph.
+ *
+ * @param {number} x The x position of the tick.
+ * @param {number} y The y position of the tick.
+ * @param {object} payload The payload of the tick.
+ * @returns {JSX.Element} The ActivityYAxisTick component.
+ */
+
 function ActivityYAxisTick({ x, y, payload }) {
   return (
     <g transform={`translate(${x},${y})`}>
