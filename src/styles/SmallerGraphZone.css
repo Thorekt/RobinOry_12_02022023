@@ -1,10 +1,33 @@
 .smaller-graph-zone {
-  height: 43%;
+  height: 264px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
 .smaller-graph-zone [class*='-graph'] {
-  max-width: 33%;
+  max-width: 264px;
+  max-height: 100%;
+}
+
+@media (max-width: 1500px) {
+  .smaller-graph-zone {
+    height: 230px;
+  }
+
+  .smaller-graph-zone [class*='-graph'] {
+    max-width: 230px;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .smaller-graph-zone {
+    height: 210px;
+  }
+
+  .smaller-graph-zone [class*='-graph'] {
+    max-width: 210px;
+    max-height: 100%;
+  }
 }

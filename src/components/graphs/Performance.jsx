@@ -6,10 +6,8 @@ import {
   RadarChart,
   Tooltip,
   PolarAngleAxis,
-  Legend,
   ResponsiveContainer,
   PolarGrid,
-  Label,
 } from 'recharts';
 
 function Performance({ userId }) {
@@ -29,7 +27,7 @@ function Performance({ userId }) {
   });
   return (
     <ResponsiveContainer className='performance-graph'>
-      <RadarChart outerRadius={90} width={730} height={250} data={data}>
+      <RadarChart outerRadius={90} data={data}>
         <PolarGrid gridType='polygon' radialLines={false} />
         <PolarAngleAxis
           dataKey='perfName'

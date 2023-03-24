@@ -34,8 +34,6 @@ function Dashboard({ userId }) {
     user.todayScore = user.score;
   }
 
-  console.log(user);
-
   return (
     <div className='dashboard'>
       <HeadDashboard nameUser={user.userInfos.firstName} />

@@ -5,9 +5,7 @@ import {
   Line,
   LineChart,
   XAxis,
-  YAxis,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   CartesianGrid,
   Label,
@@ -40,7 +38,12 @@ function AverageSessions({ userId }) {
           Durée moyenne des sessions
         </text>
         <CartesianGrid vertical={false} horizontal={false} />
-        <XAxis dataKey={'dayLetter'} tickLine={false} axisLine={false} />
+        <XAxis
+          dataKey={'dayLetter'}
+          tickLine={false}
+          axisLine={false}
+          padding={{ left: 10, right: 10 }}
+        />
         <Tooltip />
         <Line
           type='natural'

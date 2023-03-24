@@ -27,3 +27,27 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media (max-width: 1500px) {
+  .left-navbar {
+    width: 100px;
+  }
+  .left-navbar small {
+    left: 38px;
+  }
+  .left-navbar-items {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .left-navbar {
+    width: 80px;
+  }
+  .left-navbar small {
+    left: 28px;
+  }
+  .left-navbar-items {
+    margin-left: 8px;
+  }
+}
