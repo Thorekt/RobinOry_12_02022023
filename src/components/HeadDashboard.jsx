@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/HeadDashboard.css';
 
 /*
@@ -18,5 +19,9 @@ function HeadDashboard({ nameUser }) {
     </div>
   );
 }
+
+HeadDashboard.propTypes = {
+  nameUser: PropTypes.string.isRequired,
+};
 
 export default HeadDashboard;

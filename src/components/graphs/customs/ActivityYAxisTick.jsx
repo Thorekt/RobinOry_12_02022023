@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ActivityYAxisTick({ x, y, payload }) {
   return (
@@ -17,5 +18,11 @@ function ActivityYAxisTick({ x, y, payload }) {
     </g>
   );
 }
+
+ActivityYAxisTick.propTypes = {
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  payload: PropTypes.object.isRequired,
+};
 
 export default ActivityYAxisTick;

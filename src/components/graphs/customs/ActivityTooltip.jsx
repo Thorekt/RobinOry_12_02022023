@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import '../../../styles/graphs/customs/ActivityTooltip.css';
 
 function ActivityTooltip({ active, payload, label }) {
@@ -14,5 +14,11 @@ function ActivityTooltip({ active, payload, label }) {
 
   return null;
 }
+
+ActivityTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+  label: PropTypes.string,
+};
 
 export default ActivityTooltip;

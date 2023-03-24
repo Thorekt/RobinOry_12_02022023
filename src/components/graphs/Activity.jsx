@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Bar,
   BarChart,
@@ -39,7 +40,7 @@ function Activity({ userId }) {
         barGap={8} //espace entre chaque barre
         data={sessionsData}
         margin={{
-          top: 113,
+          top: 80,
           right: 0,
           left: 43,
           bottom: 0,
@@ -80,7 +81,6 @@ function Activity({ userId }) {
           content={<ActivityTooltip />}
         />
         <Legend
-          x='24'
           verticalAlign='top'
           align='right'
           iconType='circle'
@@ -107,5 +107,9 @@ function Activity({ userId }) {
     </ResponsiveContainer>
   );
 }
+
+Activity.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
 
 export default Activity;

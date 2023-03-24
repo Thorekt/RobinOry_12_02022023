@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import '../styles/TopNavbar.css';
 import logo from '../assets/icons/icon_logo_sportsee_178x60.93.svg';
@@ -22,5 +23,6 @@ function TopNavbar() {
     </nav>
   );
 }
+TopNavbar.propTypes = {};
 
 export default TopNavbar;

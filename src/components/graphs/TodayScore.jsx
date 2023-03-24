@@ -1,4 +1,5 @@
 import { React } from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/graphs/TodayScore.css';
 import {
   RadialBar,
@@ -65,5 +66,9 @@ function TodayScore({ todayScore }) {
     </ResponsiveContainer>
   );
 }
+
+TodayScore.propTypes = {
+  todayScore: PropTypes.number.isRequired,
+};
 
 export default TodayScore;

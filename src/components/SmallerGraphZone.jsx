@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import '../styles/SmallerGraphZone.css';
 import AverageSessions from './graphs/AverageSessions';
@@ -14,5 +15,10 @@ function SmallerGraphZone({ userId, todayScore }) {
     </div>
   );
 }
+
+SmallerGraphZone.propTypes = {
+  userId: PropTypes.number.isRequired,
+  todayScore: PropTypes.number.isRequired,
+};
 
 export default SmallerGraphZone;

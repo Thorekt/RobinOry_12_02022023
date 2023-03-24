@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/graphs/AverageSessions.css';
 import MockApi from '../../utils/MockApi';
 import {
@@ -57,5 +58,9 @@ function AverageSessions({ userId }) {
     </ResponsiveContainer>
   );
 }
+
+AverageSessions.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
 
 export default AverageSessions;

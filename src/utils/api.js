@@ -1,4 +1,5 @@
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const BASE_URL = `http://localhost:3000`;
 
@@ -8,7 +9,7 @@ const BASE_URL = `http://localhost:3000`;
 const Api = {
   /*
    * Get user base information
-   * @param {string} userId - user id
+   * @param {number} userId - user id
    * @returns {Promise}
    */
   getUserBaseInformation: (userId) => {
@@ -16,7 +17,7 @@ const Api = {
   },
   /*
    * Get user activity information
-   * @param {string} userId - user id
+   * @param {number} userId - user id
    * @returns {Promise}
    */
   getUserActivityInformation: (userId) => {
@@ -24,7 +25,7 @@ const Api = {
   },
   /*
    * Get user average sessions information
-   * @param {string} userId - user id
+   * @param {number} userId - user id
    * @returns {Promise}
    */
   getUserAverageSessionsInformation: (userId) => {
@@ -32,12 +33,25 @@ const Api = {
   },
   /*
    * Get user performance information
-   * @param {string} userId - user id
+   * @param {number} userId - user id
    * @returns {Promise}
    */
   getUserPerformanceInformation: (userId) => {
     return axios.get(`${BASE_URL}/user/${userId}/performance`);
   },
+};
+
+Api.getUserBaseInformation.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
+Api.getUserActivityInformation.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
+Api.getUserAverageSessionsInformation.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
+Api.getUserPerformanceInformation.propTypes = {
+  userId: PropTypes.number.isRequired,
 };
 
 export default Api;

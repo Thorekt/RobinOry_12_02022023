@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import '../../styles/graphs/Performance.css';
 import MockApi from '../../utils/MockApi';
 import {
@@ -39,5 +40,9 @@ function Performance({ userId }) {
     </ResponsiveContainer>
   );
 }
+
+Performance.propTypes = {
+  userId: PropTypes.number.isRequired,
+};
 
 export default Performance;
