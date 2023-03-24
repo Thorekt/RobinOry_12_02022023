@@ -13,65 +13,77 @@ import PropTypes from 'prop-types';
  */
 const MockApi = {
   /*
-   * Get user base information
+   * Get user base information, see USERS in ./MockData.js for more informations
    * @param {number} userId - user id
-   * @returns {Object} see USERS in ./MockData.js for more informations
+   * @returns {promise}
    */
   getUserBaseInformation: (userId) => {
-    const userBaseInformation = USERS.find((user) => {
+    let userBaseInformation = USERS.find((user) => {
       return user.data.id === userId;
     });
     if (userBaseInformation === undefined) {
-      return 'can not get user';
+      userBaseInformation = 'can not get user';
     }
-    return userBaseInformation;
+    const promise = new Promise((resolve) => {
+      resolve(userBaseInformation);
+    });
+
+    return promise;
   },
 
   /*
-   * Get user activity information
+   * Get user activity information, see USERS_ACTIVITY in ./MockData.js for more informations
    * @param {number} userId - user id
-   * @returns {Object} see USERS_ACTIVITY in ./MockData.js for more informations
+   * @returns {promise}
    */
   getUserActivityInformation: (userId) => {
-    const userActivityInformation = USERS_ACTIVITY.find((user) => {
+    let userActivityInformation = USERS_ACTIVITY.find((user) => {
       return user.data.userId === userId;
     });
     if (userActivityInformation === undefined) {
-      return 'can not get user';
+      userActivityInformation = 'can not get user';
     }
-    return userActivityInformation;
+
+    const promise = new Promise((resolve) => {
+      resolve(userActivityInformation);
+    });
+    return promise;
   },
 
   /*
-   * Get user average sessions information
+   * Get user average sessions information, see USERS_AVERAGE_SESSIONS in ./MockData.js for more informations
    * @param {number} userId - user id
-   * @returns {Object} see USERS_AVERAGE_SESSIONS in ./MockData.js for more informations
+   * @returns {promise}
    */
   getUserAverageSessionsInformation: (userId) => {
-    const userAverageSessionsInformation = USERS_AVERAGE_SESSIONS.find(
-      (user) => {
-        return user.data.userId === userId;
-      }
-    );
+    let userAverageSessionsInformation = USERS_AVERAGE_SESSIONS.find((user) => {
+      return user.data.userId === userId;
+    });
     if (userAverageSessionsInformation === undefined) {
-      return 'can not get user';
+      userAverageSessionsInformation = 'can not get user';
     }
-    return userAverageSessionsInformation;
+    const promise = new Promise((resolve) => {
+      resolve(userAverageSessionsInformation);
+    });
+    return promise;
   },
 
   /*
-   * Get user performance information
+   * Get user performance information, see USERS_PERFORMANCE in ./MockData.js for more informations
    * @param {number} userId - user id
-   * @returns {Object} see USERS_PERFORMANCE in ./MockData.js for more informations
+   * @returns {promise}
    */
   getUserPerformanceInformation: (userId) => {
-    const userPerformanceInformation = USERS_PERFORMANCE.find((user) => {
+    let userPerformanceInformation = USERS_PERFORMANCE.find((user) => {
       return user.data.userId === userId;
     });
     if (userPerformanceInformation === undefined) {
-      return 'can not get user';
+      userPerformanceInformation = 'can not get user';
     }
-    return userPerformanceInformation;
+    const promise = new Promise((resolve) => {
+      resolve(userPerformanceInformation);
+    });
+    return promise;
   },
 };
 

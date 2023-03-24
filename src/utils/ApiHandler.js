@@ -1,8 +1,8 @@
 import Api from './Api';
 import MockApi from './MockApi';
 
-//const MODE = 'development';
-const MODE = 'production';
+const MODE = 'development';
+//const MODE = 'production';
 
 // Choose which API to use between MockApi and Api
 let ApiHandler = null;

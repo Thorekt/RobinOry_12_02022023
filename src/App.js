@@ -19,7 +19,7 @@ function App() {
         <TopNavbar />
         <LeftNavbar />
         <Routes>
-          <Route index element={<Dashboard userId={18} />} />
+          <Route index element={<Dashboard userId={19} />} />
         </Routes>
       </div>
     </Router>
