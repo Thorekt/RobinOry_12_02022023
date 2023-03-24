@@ -6,6 +6,13 @@ import AverageSessions from './graphs/AverageSessions';
 import Performance from './graphs/Performance';
 import TodayScore from './graphs/TodayScore';
 
+/*
+ * This is the bottom component of the center panel, it contains 3 graphs.
+ *
+ * @param {number} userId The id of the user.
+ * @param {number} todayScore The score from the current day for this user.
+ * @returns {JSX.Element} The SmallerGraphZone component.
+ */
 function SmallerGraphZone({ userId, todayScore }) {
   return (
     <div className='smaller-graph-zone'>

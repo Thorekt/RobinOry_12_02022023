@@ -11,6 +11,13 @@ import {
   PolarGrid,
 } from 'recharts';
 
+/*
+ * This is the performance graph.
+ *
+ * @param {number} userId The id of the user.
+ * @returns {JSX.Element} The Performance component.
+ */
+
 function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
 
@@ -22,6 +29,7 @@ function Performance({ userId }) {
     return <div>Loading...</div>;
   }
 
+  // Bind the data kind to the kind name
   const data = performanceData.data.map((item, index) => {
     item.perfName = performanceData.kind[item.kind];
     return item;

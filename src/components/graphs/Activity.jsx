@@ -18,6 +18,13 @@ import ActivityYAxisTick from './customs/ActivityYAxisTick';
 
 import MockApi from '../../utils/MockApi';
 
+/*
+ * the Activity graph
+ *
+ * @param {number} userId The user id.
+ * @returns {JSX.Element} The Activity component.
+ */
+
 function Activity({ userId }) {
   const [activityData, setActivityData] = useState(null);
 
@@ -29,6 +36,7 @@ function Activity({ userId }) {
     return <div>Loading...</div>;
   }
 
+  // add a key to each session, the key is the index + 1
   const sessionsData = activityData.sessions.map((item, index) => {
     item.key = index + 1;
     return item;

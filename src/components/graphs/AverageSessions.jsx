@@ -14,6 +14,13 @@ import {
 
 const DAY_LIST = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
+/*
+ * the AverageSessions graph
+ *
+ * @param {number} userId The id of the user.
+ * @returns {JSX.Element} The AverageSessions component.
+ */
+
 function AverageSessions({ userId }) {
   const [averageSessionsData, setAverageSessionsData] = useState(null);
 
@@ -27,6 +34,7 @@ function AverageSessions({ userId }) {
     return <div>Loading...</div>;
   }
 
+  // Bind the day number to the day letter
   const sessionsData = averageSessionsData.sessions.map((item, index) => {
     item.dayLetter = DAY_LIST[item.day - 1];
     return item;

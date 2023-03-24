@@ -16,7 +16,8 @@ import '../styles/Dashboard.css';
 
 /*
  * This is the Dashboard page.
- * @param {int} userId The id of the user.
+ *
+ * @param {number} userId The id of the user.
  * @returns {JSX.Element} The Dashboard page.
  */
 function Dashboard({ userId }) {

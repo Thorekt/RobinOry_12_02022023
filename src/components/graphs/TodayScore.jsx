@@ -8,11 +8,20 @@ import {
   PolarAngleAxis,
 } from 'recharts';
 
+/*
+ * This is the graph that shows the score of the current day.
+ *
+ * @param {number} todayScore The score from the current day for this user.
+ * @returns {JSX.Element} The TodayScore component.
+ */
+
 function TodayScore({ todayScore }) {
   if (!todayScore) {
     return <div>Loading...</div>;
   }
+  //convert decimal to percentage
   todayScore = todayScore * 100;
+
   const data = [{ todayScore: todayScore }];
 
   return (
