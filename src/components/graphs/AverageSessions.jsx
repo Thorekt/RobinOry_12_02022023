@@ -25,9 +25,9 @@ function AverageSessions({ userId }) {
   const [averageSessionsData, setAverageSessionsData] = useState(null);
 
   useEffect(() => {
-    setAverageSessionsData(
-      ApiHandler.getUserAverageSessionsInformation(userId).data
-    );
+    ApiHandler.getUserAverageSessionsInformation(userId)
+      .then((res) => setAverageSessionsData(res.data))
+      .catch((err) => console.log(err));
   }, [userId, averageSessionsData]);
 
   if (!averageSessionsData) {

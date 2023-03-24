@@ -29,7 +29,9 @@ function Activity({ userId }) {
   const [activityData, setActivityData] = useState(null);
 
   useEffect(() => {
-    setActivityData(ApiHandler.getUserActivityInformation(userId).data);
+    ApiHandler.getUserActivityInformation(userId)
+      .then((res) => setActivityData(res.data))
+      .catch((err) => console.log(err));
   }, [userId, activityData]);
 
   if (!activityData) {

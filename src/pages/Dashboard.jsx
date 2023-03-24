@@ -24,11 +24,13 @@ function Dashboard({ userId }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setUser(ApiHandler.getUserBaseInformation(userId).data);
+    ApiHandler.getUserBaseInformation(userId)
+      .then((res) => setUser(res.data))
+      .catch((err) => console.log(err));
   }, [userId, user]);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div className='dashboard'>Loading...</div>;
   }
 
   if (!user.todayScore && user.score) {

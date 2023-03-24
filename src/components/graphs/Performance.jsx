@@ -22,7 +22,9 @@ function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
 
   useEffect(() => {
-    setPerformanceData(ApiHandler.getUserPerformanceInformation(userId).data);
+    ApiHandler.getUserPerformanceInformation(userId)
+      .then((res) => setPerformanceData(res.data))
+      .catch((err) => console.log(err));
   }, [userId, performanceData]);
 
   if (!performanceData) {

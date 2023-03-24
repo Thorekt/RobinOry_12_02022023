@@ -13,7 +13,8 @@ const Api = {
    * @returns {Promise}
    */
   getUserBaseInformation: (userId) => {
-    return axios.get(`${BASE_URL}/user/${userId}`);
+    const promise = axios.get(`${BASE_URL}/user/${userId}`);
+    return promise.then((response) => response.data);
   },
   /*
    * Get user activity information
@@ -21,7 +22,8 @@ const Api = {
    * @returns {Promise}
    */
   getUserActivityInformation: (userId) => {
-    return axios.get(`${BASE_URL}/user/${userId}/activity`);
+    const promise = axios.get(`${BASE_URL}/user/${userId}/activity`);
+    return promise.then((response) => response.data);
   },
   /*
    * Get user average sessions information
@@ -29,7 +31,8 @@ const Api = {
    * @returns {Promise}
    */
   getUserAverageSessionsInformation: (userId) => {
-    return axios.get(`${BASE_URL}/user/${userId}/average-sessions`);
+    const promise = axios.get(`${BASE_URL}/user/${userId}/average-sessions`);
+    return promise.then((response) => response.data);
   },
   /*
    * Get user performance information
@@ -37,7 +40,9 @@ const Api = {
    * @returns {Promise}
    */
   getUserPerformanceInformation: (userId) => {
-    return axios.get(`${BASE_URL}/user/${userId}/performance`);
+    const promise = axios.get(`${BASE_URL}/user/${userId}/performance`);
+
+    return promise.then((response) => response.data);
   },
 };
 
