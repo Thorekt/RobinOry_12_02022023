@@ -16,7 +16,7 @@ import ActivityTooltip from './customs/ActivityTooltip';
 import ActivityXAxisTick from './customs/ActivityXAxisTick';
 import ActivityYAxisTick from './customs/ActivityYAxisTick';
 
-import MockApi from '../../utils/MockApi';
+import ApiHandler from '../../utils/ApiHandler';
 
 /*
  * the Activity graph
@@ -29,7 +29,7 @@ function Activity({ userId }) {
   const [activityData, setActivityData] = useState(null);
 
   useEffect(() => {
-    setActivityData(MockApi.getUserActivityInformation(userId).data);
+    setActivityData(ApiHandler.getUserActivityInformation(userId).data);
   }, [userId, activityData]);
 
   if (!activityData) {

@@ -10,7 +10,7 @@ import carbsSrc from '../assets/icons/icon_carbs_60x60.svg';
 import fatSrc from '../assets/icons/icon_fat_60x60.svg';
 import proteinSrc from '../assets/icons/icon_protein_60x60.svg';
 
-import MockApi from '../utils/MockApi';
+import ApiHandler from '../utils/ApiHandler';
 
 import '../styles/Dashboard.css';
 
@@ -24,7 +24,7 @@ function Dashboard({ userId }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    setUser(MockApi.getUserBaseInformation(userId).data);
+    setUser(ApiHandler.getUserBaseInformation(userId).data);
   }, [userId, user]);
 
   if (!user) {

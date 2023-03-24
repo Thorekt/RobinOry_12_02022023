@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/graphs/Performance.css';
-import MockApi from '../../utils/MockApi';
+import ApiHandler from '../../utils/ApiHandler';
 import {
   Radar,
   RadarChart,
@@ -22,7 +22,7 @@ function Performance({ userId }) {
   const [performanceData, setPerformanceData] = useState(null);
 
   useEffect(() => {
-    setPerformanceData(MockApi.getUserPerformanceInformation(userId).data);
+    setPerformanceData(ApiHandler.getUserPerformanceInformation(userId).data);
   }, [userId, performanceData]);
 
   if (!performanceData) {

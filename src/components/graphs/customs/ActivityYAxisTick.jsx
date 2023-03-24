@@ -29,9 +29,9 @@ function ActivityYAxisTick({ x, y, payload }) {
 }
 
 ActivityYAxisTick.propTypes = {
-  x: PropTypes.number.isRequired,
-  y: PropTypes.number.isRequired,
-  payload: PropTypes.object.isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  payload: PropTypes.object,
 };
 
 export default ActivityYAxisTick;

@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import '../../styles/graphs/AverageSessions.css';
-import MockApi from '../../utils/MockApi';
+import ApiHandler from '../../utils/ApiHandler';
 import {
   Line,
   LineChart,
@@ -26,7 +26,7 @@ function AverageSessions({ userId }) {
 
   useEffect(() => {
     setAverageSessionsData(
-      MockApi.getUserAverageSessionsInformation(userId).data
+      ApiHandler.getUserAverageSessionsInformation(userId).data
     );
   }, [userId, averageSessionsData]);
 

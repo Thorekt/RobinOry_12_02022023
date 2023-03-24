@@ -14,7 +14,7 @@ import '../../../styles/graphs/customs/ActivityTooltip.css';
  * @returns {null} If the payload is an empty array.
  */
 
-function ActivityTooltip({ active, payload, label }) {
+function ActivityTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (
       <div className='activity-custom-tooltip'>
@@ -30,7 +30,6 @@ function ActivityTooltip({ active, payload, label }) {
 ActivityTooltip.propTypes = {
   active: PropTypes.bool,
   payload: PropTypes.array,
-  label: PropTypes.string,
 };
 
 export default ActivityTooltip;
