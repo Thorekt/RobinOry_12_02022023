@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../styles/LeftNavbar.css';
 import icon1 from '../assets/icons/icon_left_navbar_1_64x64.svg';
