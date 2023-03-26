@@ -40,7 +40,7 @@ It's make with React.js
 
 **Start the project :**
 
-- `yarn start`or `npm start`
+- `yarn start` or `npm start`
 
 The base url is [http://localhost:3001](http://localhost:3001)
 
