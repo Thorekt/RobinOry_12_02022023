@@ -20,8 +20,8 @@ function App() {
         <TopNavbar />
         <LeftNavbar />
         <Routes>
-          <Route index element={<Dashboard userId={18} />} />
-          <Route path='error' element={<Error />} />
+          <Route index element={<Dashboard userId={12} />} />
+          <Route path='*' element={<Error />} />
         </Routes>
       </div>
     </Router>

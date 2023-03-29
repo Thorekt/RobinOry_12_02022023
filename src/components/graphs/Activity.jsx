@@ -15,6 +15,7 @@ import '../../styles/graphs/Activity.css';
 import ActivityTooltip from './customs/ActivityTooltip';
 import ActivityXAxisTick from './customs/ActivityXAxisTick';
 import ActivityYAxisTick from './customs/ActivityYAxisTick';
+import ActivityLegend from './customs/ActivityLegend';
 
 import ApiHandler from '../../utils/ApiHandler';
 import { Navigate } from 'react-router-dom';
@@ -106,6 +107,9 @@ function Activity({ userId }) {
           align='right'
           iconType='circle'
           iconSize={8}
+          width={400}
+          wrapperStyle={{ top: 12, right: -25 }}
+          formatter={ActivityLegend}
         />
 
         <Bar
