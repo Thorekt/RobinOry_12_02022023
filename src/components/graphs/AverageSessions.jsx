@@ -54,7 +54,21 @@ function AverageSessions({ userId }) {
 
   return (
     <ResponsiveContainer className='average-sessions-graph'>
-      <LineChart data={sessionsData}>
+      <LineChart
+        data={sessionsData}
+        margin={{
+          top: 80,
+          right: 0,
+          left: 0,
+          bottom: 20,
+        }}
+      >
+        <defs>
+          <linearGradient id='gradient'>
+            <stop offset='20%' stopColor='#ffffff' stopOpacity={0.3} />
+            <stop offset='100%' stopColor='#ffffff' stopOpacity={1} />
+          </linearGradient>
+        </defs>
         <text x='34' y='29' className='title' fill='#FFFFFF'>
           Durée moyenne des sessions
         </text>
@@ -63,15 +77,18 @@ function AverageSessions({ userId }) {
           dataKey={'dayLetter'}
           tickLine={false}
           axisLine={false}
+          tickMargin={20}
           padding={{ left: 10, right: 10 }}
+          tick={{ fill: '#FFFFFF', opacity: '0.5' }}
         />
         <Tooltip />
         <Line
           type='natural'
           dataKey='sessionLength'
-          stroke='#ffffff'
+          stroke='url(#gradient)'
           strokeWidth={2}
           dot={false}
+          transform='scale(1.15,1), translate(-15, 0)'
         />
         <Label />
       </LineChart>
