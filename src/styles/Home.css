@@ -1,0 +1,22 @@
+.home {
+  margin: 50px 150px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.home a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+  background-color: #e0e0e0;
+  border: 1px solid #909090;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.home a:hover {
+  background-color: #c9c9c9;
+}

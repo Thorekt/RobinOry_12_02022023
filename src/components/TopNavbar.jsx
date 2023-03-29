@@ -15,7 +15,7 @@ function TopNavbar() {
       <div className='top-navbar__logo'>
         <img src={logo} alt='SportSee' />
       </div>
-      <Link>Accueil</Link>
+      <Link to='/'>Accueil</Link>
       <Link>Profil</Link>
       <Link>Réglage</Link>
       <Link>Communauté</Link>

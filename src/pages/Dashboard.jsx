@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Activity from '../components/graphs/Activity';
 import HeadDashboard from '../components/HeadDashboard';
@@ -21,7 +22,9 @@ import '../styles/Dashboard.css';
  * @param {number} userId The id of the user.
  * @returns {JSX.Element} The Dashboard page.
  */
-function Dashboard({ userId }) {
+function Dashboard() {
+  const { userId } = useParams();
+
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
@@ -82,8 +85,6 @@ function Dashboard({ userId }) {
   );
 }
 
-Dashboard.propTypes = {
-  userId: PropTypes.number,
-};
+Dashboard.propTypes = {};
 
 export default Dashboard;

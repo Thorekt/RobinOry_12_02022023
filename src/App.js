@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Error from './pages/Error';
 import TopNavbar from './components/TopNavbar';
 import LeftNavbar from './components/LeftNavbar';
+import Home from './pages/Home';
 
 /*
  * Entry point for the application. Should not be used elsewhere than in src/index.js.
@@ -20,7 +21,8 @@ function App() {
         <TopNavbar />
         <LeftNavbar />
         <Routes>
-          <Route index element={<Dashboard userId={12} />} />
+          <Route index element={<Home />} />
+          <Route path='dashboard/:userId' element={<Dashboard />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </div>
