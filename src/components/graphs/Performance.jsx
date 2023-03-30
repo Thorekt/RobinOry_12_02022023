@@ -52,19 +52,17 @@ function Performance({ userId }) {
     return <div>Loading...</div>;
   }
 
-  // Bind the data kind to the kind name
-  const data = performanceData.data.map((item, index) => {
-    item.perfName = kind[item.kind];
-    return item;
-  });
+  // Bind the data kind to the kind name and reverse the array to get the correct display in the charts
+  const data = performanceData.data
+    .map((item, index) => {
+      item.perfName = kind[item.kind];
+      return item;
+    })
+    .reverse();
+
   return (
     <ResponsiveContainer className='performance-graph'>
-      <RadarChart
-        outerRadius={'65%'}
-        data={data}
-        startAngle={-150}
-        endAngle={210}
-      >
+      <RadarChart outerRadius={'63%'} data={data}>
         <PolarGrid gridType='polygon' radialLines={false} />
         <PolarAngleAxis
           dataKey='perfName'

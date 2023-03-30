@@ -70,7 +70,10 @@ function AverageSessions({ userId }) {
           </linearGradient>
         </defs>
         <text x='34' y='29' className='title' fill='#FFFFFF'>
-          Durée moyenne des sessions
+          Durée moyenne des
+        </text>
+        <text x='34' y='49' className='title' fill='#FFFFFF'>
+          sessions
         </text>
         <CartesianGrid vertical={false} horizontal={false} />
         <XAxis
