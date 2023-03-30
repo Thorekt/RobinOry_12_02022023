@@ -13,6 +13,7 @@ import {
   CartesianGrid,
   Label,
 } from 'recharts';
+import AverageSessionsTooltip from './customs/AverageSessionsTooltip';
 
 const DAY_LIST = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
@@ -57,10 +58,10 @@ function AverageSessions({ userId }) {
       <LineChart
         data={sessionsData}
         margin={{
-          top: 80,
+          top: 90,
           right: 0,
           left: 0,
-          bottom: 20,
+          bottom: 35,
         }}
       >
         <defs>
@@ -80,18 +81,24 @@ function AverageSessions({ userId }) {
           dataKey={'dayLetter'}
           tickLine={false}
           axisLine={false}
-          tickMargin={20}
+          tickMargin={40}
           padding={{ left: 10, right: 10 }}
           tick={{ fill: '#FFFFFF', opacity: '0.5' }}
         />
-        <Tooltip />
+        <Tooltip cursor={false} content={<AverageSessionsTooltip />} />
         <Line
           type='natural'
           dataKey='sessionLength'
           stroke='url(#gradient)'
           strokeWidth={2}
           dot={false}
-          transform='scale(1.15,1), translate(-15, 0)'
+          activeDot={{
+            r: 2,
+            fill: '#ffffff',
+            stroke: '#ffffff',
+            transform: 'scale(1.11,1.11), translate(-10, 0)',
+          }}
+          transform='scale(1.11,1.11), translate(-10, 0)'
         />
         <Label />
       </LineChart>
