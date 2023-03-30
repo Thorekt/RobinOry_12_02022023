@@ -34,8 +34,8 @@
 
 @media (max-width: 1500px) {
   .dashboard {
-    margin-left: 100px;
-    padding: 50px 60px 50px 60px;
+    margin-left: 80px;
+    padding: 40px 45px 40px 45px;
   }
   .dashboard-content {
     gap: 20px;
@@ -43,8 +43,7 @@
 }
 
 @media (max-width: 1200px) {
-  .dashboard {
-    margin-left: 80px;
-    padding: 40px 45px 40px 45px;
+  .dashboard-content {
+    gap: 20px;
   }
 }

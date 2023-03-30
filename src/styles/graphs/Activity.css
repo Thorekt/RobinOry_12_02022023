@@ -12,7 +12,7 @@
   line-height: 24px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   .activity-graph {
     max-height: 250px;
   }
