@@ -50,7 +50,7 @@ function Performance({ userId }) {
   });
   return (
     <ResponsiveContainer className='performance-graph'>
-      <RadarChart outerRadius={90} data={data}>
+      <RadarChart outerRadius={60} data={data}>
         <PolarGrid gridType='polygon' radialLines={false} />
         <PolarAngleAxis
           dataKey='perfName'

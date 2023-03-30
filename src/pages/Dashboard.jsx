@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Activity from '../components/graphs/Activity';
 import HeadDashboard from '../components/HeadDashboard';
 import KeyInformationCard from '../components/KeyInformationCard';
@@ -23,8 +22,8 @@ import '../styles/Dashboard.css';
  * @returns {JSX.Element} The Dashboard page.
  */
 function Dashboard() {
-  const { userId } = useParams();
-
+  let { userId } = useParams();
+  userId = parseInt(userId);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 

@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 
+/*
+ * This is the home page. It contains links to the dashboard of the users.
+ *
+ * @returns {JSX.Element} The home page.
+ */
 function Home() {
   return (
     <div className='home'>
