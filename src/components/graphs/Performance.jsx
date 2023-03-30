@@ -13,6 +13,15 @@ import {
   PolarGrid,
 } from 'recharts';
 
+const kind = {
+  1: 'Cardio',
+  2: 'Energie',
+  3: 'Endurance',
+  4: 'Force',
+  5: 'Vitesse',
+  6: 'Intensité',
+};
+
 /*
  * This is the performance graph.
  *
@@ -45,16 +54,22 @@ function Performance({ userId }) {
 
   // Bind the data kind to the kind name
   const data = performanceData.data.map((item, index) => {
-    item.perfName = performanceData.kind[item.kind];
+    item.perfName = kind[item.kind];
     return item;
   });
   return (
     <ResponsiveContainer className='performance-graph'>
-      <RadarChart outerRadius={60} data={data}>
+      <RadarChart
+        outerRadius={'65%'}
+        data={data}
+        startAngle={-150}
+        endAngle={210}
+      >
         <PolarGrid gridType='polygon' radialLines={false} />
         <PolarAngleAxis
           dataKey='perfName'
-          tick={{ fill: '#ffffff', fontSize: 15 }}
+          tick={{ fill: '#ffffff', fontSize: 12 }}
+          axisLine={false}
         />
         <Tooltip />
         <Radar type='monotone' dataKey='value' fill='rgba(255, 1, 1, 0.7)' />

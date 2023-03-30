@@ -108,7 +108,7 @@ function Activity({ userId }) {
           iconType='circle'
           iconSize={8}
           width={400}
-          wrapperStyle={{ top: 12, right: -25 }}
+          wrapperStyle={{ top: 10, right: -25 }}
           formatter={ActivityLegend}
         />
 
