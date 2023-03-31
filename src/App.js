@@ -22,7 +22,7 @@ function App() {
         <LeftNavbar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path='dashboard/:userId' element={<Dashboard />} />
+          <Route path='user/:userId' element={<Dashboard />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </div>

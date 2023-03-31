@@ -7,7 +7,6 @@ import '../../../styles/graphs/customs/ActivityTooltip.css';
  *
  * @param {boolean} active If the tooltip is active.
  * @param {array} payload The payload of the tooltip.
- * @param {string} label The label of the tooltip.
  * @returns {JSX.Element} The ActivityTooltip component.
  * @returns {null} If the tooltip is not active.
  * @returns {null} If the payload is not an array.
