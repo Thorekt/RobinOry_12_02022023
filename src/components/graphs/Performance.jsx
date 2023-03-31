@@ -7,7 +7,6 @@ import { Navigate } from 'react-router-dom';
 import {
   Radar,
   RadarChart,
-  Tooltip,
   PolarAngleAxis,
   ResponsiveContainer,
   PolarGrid,
@@ -69,7 +68,6 @@ function Performance({ userId }) {
           tick={{ fill: '#ffffff', fontSize: 12 }}
           axisLine={false}
         />
-        <Tooltip />
         <Radar type='monotone' dataKey='value' fill='rgba(255, 1, 1, 0.7)' />
       </RadarChart>
     </ResponsiveContainer>
