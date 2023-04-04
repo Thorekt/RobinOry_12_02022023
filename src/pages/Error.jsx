@@ -11,7 +11,7 @@ function Error() {
   return (
     <div className='error'>
       <h1>Erreur</h1>
-      <p>Contenu indisponnible actuellement</p>
+      <p>Contenu indisponible actuellement</p>
     </div>
   );
 }
